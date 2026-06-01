@@ -1,23 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = [...document.querySelectorAll('.day-card')];
-  const toggle = document.querySelector('#toggleAll');
+  const cards = Array.from(document.querySelectorAll('.day-card'));
+  const toggle = document.getElementById('toggleAll');
+  const toggleText = document.getElementById('toggleAllText');
 
-  cards.forEach(card => card.classList.add('collapsed'));
+  if (!toggle || !toggleText || cards.length === 0) {
+    return;
+  }
 
   function updateToggleText() {
-    const anyOpen = cards.some(
-      card => !card.classList.contains('collapsed')
-    );
-
-    toggle.textContent = anyOpen
-      ? 'Свернуть все'
-      : 'Развернуть все';
+    const hasOpenCard = cards.some(card => !card.classList.contains('collapsed'));
+    toggleText.textContent = hasOpenCard ? 'Свернуть все' : 'Развернуть все';
   }
+
+  cards.forEach(card => {
+    card.classList.add('collapsed');
+  });
 
   updateToggleText();
 
   cards.forEach(card => {
     const head = card.querySelector('.day-head');
+
+    if (!head) {
+      return;
+    }
 
     head.addEventListener('click', () => {
       card.classList.toggle('collapsed');
@@ -26,12 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   toggle.addEventListener('click', () => {
-    const anyOpen = cards.some(
-      card => !card.classList.contains('collapsed')
-    );
+    const hasOpenCard = cards.some(card => !card.classList.contains('collapsed'));
 
     cards.forEach(card => {
-      card.classList.toggle('collapsed', anyOpen);
+      card.classList.toggle('collapsed', hasOpenCard);
     });
 
     updateToggleText();
