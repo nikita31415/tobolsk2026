@@ -24,6 +24,9 @@ body {
 }
 
 .hero > div:first-child {
+  position: relative;
+  overflow: hidden;
+
   background: linear-gradient(135deg, #2e211b, #6b3e2b);
   color: #fff;
   border-radius: 32px;
@@ -377,18 +380,26 @@ body {
   content: "";
 
   position: absolute;
-  right: 30px;
+
+  right: -60px;
   top: 50%;
 
-  width: 180px;
-  height: 180px;
+  width: 420px;
+  height: 420px;
 
   transform: translateY(-50%);
 
   background-image: url("images/tobolsk-coat.svg");
-
-  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
-  opacity: 0.12;
+  opacity: 0.08;
+
+  pointer-events: none;
+}
+
+.hero > div:first-child > * {
+  position: relative;
+  z-index: 2;
 }
