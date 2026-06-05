@@ -24,3 +24,23 @@
 .day-card.collapsed .day-body {
   display: none;
 }
+
+.day-head {
+  display: flex;
+  align-items: center;
+}
+
+.head-text {
+  flex: 1;
+}
+
+.day-distance {
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.7);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
