@@ -193,7 +193,7 @@ body {
 }
 
 .head-text h2 {
-  font-size: 25px;
+  font-size: clamp(20px, 2vw, 24px);
   margin: 0 0 6px;
 }
 
@@ -371,4 +371,24 @@ body {
   .hero-card strong {
     font-size: 38px;
   }
+}
+
+.hero > div:first-child::after {
+  content: "";
+
+  position: absolute;
+  right: 30px;
+  top: 50%;
+
+  width: 180px;
+  height: 180px;
+
+  transform: translateY(-50%);
+
+  background-image: url("images/tobolsk-coat.svg");
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  opacity: 0.12;
 }
