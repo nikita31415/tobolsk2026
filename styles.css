@@ -381,11 +381,11 @@ body {
 
   position: absolute;
 
-  right: -60px;
+  right: -50px;
   top: 50%;
 
-  width: 320px;
-  height: 320px;
+  width: 270px;
+  height: 270px;
 
   transform: translateY(-50%);
 
