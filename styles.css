@@ -403,3 +403,16 @@ body {
   position: relative;
   z-index: 2;
 }
+
+.nights a {
+  display: inline-block;
+  margin-top: 10px;
+
+  color: #9b5a36;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nights a:hover {
+  text-decoration: underline;
+}
